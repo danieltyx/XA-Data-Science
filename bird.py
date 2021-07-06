@@ -1,4 +1,31 @@
 #Bird class               
+"""
+OOP classes and inheritance: 
+
+Assertions are used to test whether the function outputs satisfy our goal.
+For example, assert(type(bird1) == Bird). This means the type of bird1 should be "Bird".
+Remember, whatever inside the bracket should be TRUE to pass the assertion.
+
+Read the test case (assertions) to see what each function should do!
+
+Parent Class:
+A basic Bird has a species name, can fly, and can lay eggs
+You will input a species name when creating a class object.
+Fly function will output a sentence. 
+CountEgg returns the egg each object has.
+LayEgg will change the number of eggs each object has.
+repr will return a sentence in this format "[Species] has [number of eggs]". Be careful of 1 egg and 2 eggs.(You need to satisfy both cases)
+
+Child Class:
+Penguin class inherits from Bird class.
+It can't fly, but it can swim. Rewrite fly function and add swim function.
+
+MessengerBird class inherits from Bird class.
+Rewrite the init function. 
+This object can either carry a message when initialized or not.
+
+Run the file after finishing the code. If it prints "Done!", congrats!
+"""
 class Bird(object):
     def __init__(self,species):
         pass
