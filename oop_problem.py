@@ -26,19 +26,38 @@ Test your code by creating a network with at least 5 neurons with 6 connections.
 """
 
 class Net():
+    neurons = []
+
     def __init__(self, neurons):
-        """
-        enter your code here
-        """
+        self.neurons = neurons 
+
     
     def predict(self, input):
-        """
-        enter your code here
-        """
-    
+        cnt = input
+        for neuron in self.neurons:
+            cnt += neuron.label 
+        return cnt
 
 class Neuron():
-    """
-    enter your code here
-    """
+    childs = []
+    label = 0
+    def __init__(self, label):
+        self.label = label
+
+    def get_lable(self):
+        return self.label
+    
+    def connect(self,child_neuron):
+        self.childs.append(child_neuron)
+
+
+
+n1 = Neuron(1)
+n2 = Neuron(2)
+n3 = Neuron(3)
+n1.connect(n2)
+n1.connect(n3)
+print(n1.get_lable())
+net1 = Net([n1,n2,n3])
+print(net1.predict(4))
 
