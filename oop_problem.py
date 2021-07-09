@@ -39,9 +39,9 @@ class Net():
         return cnt
 
 class Neuron():
-    childs = []
-    label = 0
+   
     def __init__(self, label):
+        self.childs = []
         self.label = label
 
     def get_lable(self):
@@ -52,12 +52,22 @@ class Neuron():
 
 
 
+
 n1 = Neuron(1)
 n2 = Neuron(2)
 n3 = Neuron(3)
+n4 = Neuron(4)
+n5 = Neuron(5)
 n1.connect(n2)
-n1.connect(n3)
+n2.connect(n3)
+n2.connect(n4)
+n2.connect(n5)
+n3.connect(n5)
+n3.connect(n4)
 print(n1.get_lable())
 net1 = Net([n1,n2,n3])
-print(net1.predict(4))
+print(net1.predict(6))
+print(net1.predict(7))
+print(net1.predict(8))
+
 
