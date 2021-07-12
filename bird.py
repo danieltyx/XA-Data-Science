@@ -28,37 +28,43 @@ Run the file after finishing the code. If it prints "Done!", congrats!
 """
 class Bird(object):
     def __init__(self,species):
-        pass
+        self.species = species
+        self.eggs = 0
 
     def fly(self):
-        pass
+        return "I can fly!"
 
     def countEggs(self):
-        pass
+        return self.eggs
         
     def layEgg(self):
-        pass
+        self.eggs += 1
         
     def __repr__(self):
-        pass
+        if self.eggs == 1:
+            return self.species + " has " + "1 egg"
+        else:
+            return self.species + " has " + str(self.eggs) + " eggs"
         
 class Penguin(Bird):
     #inherit from Bird class
     #override method fly()
     def fly(self):
-        pass
+        return "No flying for me."
             
     def swim(self):
-        pass
+        return "I can swim!"
             
 class MessengerBird(Bird):
     #inherit from Bird class
     #override init
     def __init__(self,species,message=""):
-        pass
+        self.species = species
+        self.eggs = 0
+        self.message = message
         
     def deliverMessage(self):
-        pass
+        return self.message
         
 ## helper function
 def getLocalMethods(clss):
@@ -75,7 +81,7 @@ def getLocalMethods(clss):
 
 ### Test case
 def testBirdClasses():
-    print("Testing Bird classes...", end="")
+    print("Testing Bird classes...", end='')
     # A basic Bird has a species name, can fly, and can lay eggs
     bird1 = Bird("Parrot")
     assert(type(bird1) == Bird)
