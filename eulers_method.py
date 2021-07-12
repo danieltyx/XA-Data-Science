@@ -14,8 +14,18 @@ def eulers_method(f,y0,b,N):
     Return: a list of tuples (xi, yi) for i = 0,...,N
     '''
     ### START CODE HERE ###
+    step = b / N
+    x = 0
+    y = y0
+    res = []
+    
+    
+    while b - x >=0.00000001:
 
-    pass # as a place holder, delete this line when you start
+        y += step * f(x)
+        x += step
+        res.append((x,y))
+    return res
 
 def f_derivative(x):
     return math.exp(x) * math.sin(x)
@@ -36,3 +46,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
+    
+'''
+Test Case 1: f'(x) = e^x * sin(x) and f(0) = 0, steps = 2000, evaluate f(30)
+When x = 30.000, y is approximated to be -6024467273647.519
+Test Case 2: f'(x) = 2x and f(0) = 0, steps = 20000, evaluate f(30)
+When x = 30.00000000000108, y is approximated to be 899.955000000031
+'''
